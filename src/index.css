@@ -21,4 +21,7 @@ body {
 
 #bg-container {
   z-index: -1;
+  background-color: black;
+  height: unset;
+  aspect-ratio: 17 / 8;
 }

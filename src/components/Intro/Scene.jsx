@@ -9,6 +9,14 @@ function setupCamera(camera, size) {
   camera.updateProjectionMatrix();
 }
 
+function setupAction(action) {
+  action.setLoop(LoopOnce);
+  action.clampWhenFinished = true;
+  // action.setEffectiveTimeScale(5);
+
+  action.reset().play();
+}
+
 function Scene({ onStart, onFinish }) {
   const { scene, animations, cameras } = useGLTF("/src/assets/intro.glb");
   const { actions, mixer } = useAnimations(animations, scene);
@@ -35,8 +43,7 @@ function Scene({ onStart, onFinish }) {
     const action = actions["Scene"];
 
     if (!action) return;
-    action.setLoop(LoopOnce);
-    action.reset().play();
+    setupAction(action);
 
     const handleFinished = () => {
       onFinish?.();
