@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Intro from "./components/Intro";
 import Background from "./components/Background";
+import Nav from "./components/Nav";
 
 function App() {
   const [showLoading, setShowLoading] = useState(true);
@@ -31,6 +32,7 @@ function App() {
       <div id="bg-container">
         <Background />
       </div>
+      <Nav />
       <h1>Lorem ipsum dolor</h1>
     </>
   );
