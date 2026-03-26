@@ -1,4 +1,8 @@
 import App from "../App";
+import Home from "../pages/Home";
+import Info from "../pages/Info";
+import Projects from "../pages/Projects";
+import Contact from "../pages/Contact";
 
 const routes = [
   {
@@ -8,19 +12,19 @@ const routes = [
     children: [
       {
         index: true,
-        //element:<Home />
+        element: <Home />,
       },
       {
         path: "info",
-        //element:<Info />
+        element: <Info />,
       },
       {
         path: "projects",
-        //element:<Projects />
+        element: <Projects />,
       },
       {
         path: "contact",
-        //element:<Contact />
+        element: <Contact />,
       },
     ],
   },
