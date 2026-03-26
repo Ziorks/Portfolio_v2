@@ -1,0 +1,17 @@
+.bgContainer {
+  position: absolute;
+  top: -130px;
+  left: -350px;
+  background-color: black;
+  min-height: 600px;
+  aspect-ratio: 17 / 8;
+}
+
+@media (min-width: 800px) {
+  .bgContainer {
+    top: unset;
+    bottom: -150px;
+    left: 30%;
+    width: 100%;
+  }
+}

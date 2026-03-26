@@ -1,0 +1,62 @@
+.contentContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.contentContainer > main {
+  --padding: 2rem;
+  --marginTop: 12rem;
+
+  height: calc(100% - var(--marginTop));
+  padding: var(--padding);
+  margin-top: var(--marginTop);
+  position: relative;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  mask-image: none;
+}
+
+.contentContainer > main:not(.isScrollable) {
+  mask-image: none;
+}
+
+.contentContainer > main.isScrollable {
+  mask-image: linear-gradient(
+    transparent,
+    transparent var(--padding),
+    black calc(var(--padding) + 100px),
+    black calc(100% - calc(var(--padding) + 100px)),
+    transparent calc(100% - var(--padding)),
+    transparent
+  );
+}
+
+.contentContainer > main.atTop:not(.atBottom) {
+  mask-image: linear-gradient(
+    to top,
+    transparent,
+    transparent var(--padding),
+    black calc(var(--padding) + 100px)
+  );
+}
+
+.contentContainer > main.atBottom:not(.atTop) {
+  mask-image: linear-gradient(
+    transparent,
+    transparent var(--padding),
+    black calc(var(--padding) + 100px)
+  );
+}
+
+@media (min-width: 800px) {
+  .contentContainer > main {
+    --marginTop: 0px;
+
+    margin-right: 40%;
+  }
+}

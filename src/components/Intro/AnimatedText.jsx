@@ -12,12 +12,10 @@ function setupCamera(camera, size) {
 function setupAction(action) {
   action.setLoop(LoopOnce);
   action.clampWhenFinished = true;
-  // action.setEffectiveTimeScale(5);
-
   action.reset().play();
 }
 
-function Scene({ onStart, onFinish }) {
+function AnimatedText({ onStart, onFinish }) {
   const { scene, animations, cameras } = useGLTF("/src/assets/intro.glb");
   const { actions, mixer } = useAnimations(animations, scene);
   const { set, size } = useThree();
@@ -59,4 +57,4 @@ function Scene({ onStart, onFinish }) {
   return <primitive object={scene} />;
 }
 
-export default Scene;
+export default AnimatedText;

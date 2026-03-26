@@ -1,7 +1,8 @@
 .navContainer {
-  position: fixed;
-  right: 0;
-  top: 0;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  overflow: hidden;
 }
 
 .link {
@@ -42,4 +43,15 @@
 .navContainer:has(.link:hover, .link:focus)
   > .link:not(:hover, :focus).active::after {
   opacity: 0.5;
+}
+
+@media (min-width: 800px) {
+  .link {
+    font-size: 3rem;
+  }
+
+  .link::after {
+    letter-spacing: -15px;
+    bottom: 1.8rem;
+  }
 }

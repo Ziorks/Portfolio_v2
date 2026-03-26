@@ -6,24 +6,11 @@
   box-sizing: border-box;
 }
 
-body {
+html,
+body,
+#root {
   color: #fff;
-  background-color: #555;
-}
-
-#intro-container,
-#bg-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-#bg-container {
-  z-index: -1;
-  background-color: black;
-  height: unset;
-  aspect-ratio: 17 / 8;
+  background-color: #000;
+  width: 100vw;
+  height: 100vh;
 }
