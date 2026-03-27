@@ -1,0 +1,141 @@
+.slideshowContainer {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.image {
+  display: none;
+  position: absolute;
+  width: 100%;
+  object-fit: contain;
+  background-color: #000;
+}
+
+.image.active,
+.animateRight,
+.animateLeft {
+  display: block;
+}
+
+.image:not(.active).animateRight {
+  animation: slideInFromLeft 1s ease-in-out both;
+}
+
+.image:not(.active).animateLeft {
+  animation: slideInFromRight 1s ease-in-out both;
+}
+
+.image.active.animateRight {
+  animation: slideOutToRight 1s ease-in-out both;
+}
+
+.image.active.animateLeft {
+  animation: slideOutToLeft 1s ease-in-out both;
+}
+
+.slideshowContainer:hover .next,
+.slideshowContainer:hover .prev,
+.slideshowContainer:focus-within .next,
+.slideshowContainer:focus-within .prev {
+  opacity: 1;
+}
+
+.next,
+.prev {
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  padding: 0 2rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: bold;
+  font-size: 2rem;
+  background-color: unset;
+  border: unset;
+  transition:
+    color 0.5s ease,
+    opacity 0.2s ease-out;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+}
+
+.prev {
+  left: 0;
+}
+
+.prev:hover,
+.prev:focus,
+.next:hover,
+.next:focus {
+  color: #fff;
+}
+
+.gotoContainer {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  position: absolute;
+  bottom: 1rem;
+  width: 100%;
+  padding: 0 5rem;
+}
+
+.gotoContainer > button {
+  box-sizing: content-box;
+  flex: 0 1 2rem;
+  height: 4px;
+  border: unset;
+  border-top: 0.5rem solid transparent;
+  border-bottom: 0.5rem solid transparent;
+  background-color: rgba(255, 255, 255, 0.5);
+  background-clip: padding-box;
+  cursor: pointer;
+}
+
+.gotoContainer > button.active,
+.gotoContainer > button:hover {
+  background-color: #fff;
+}
+
+@keyframes slideOutToRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slideOutToLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
