@@ -5,14 +5,11 @@ import styles from "./Home.module.css";
 function Home() {
   return (
     <>
-      <h1 className={styles.heading}>Fullstack web developer</h1>
+      <h1 className={styles.heading}>Frank Scott</h1>
 
-      <p className={styles.hook}>
-        Driven by curiosity and a hands-on approach to learning, I create clean,
-        user-friendly applications.
-      </p>
+      <p className={styles.title}>Full Stack Developer</p>
 
-      <p>
+      <p className={styles.location}>
         Located in{" "}
         <span className={styles.wisconsin}>
           Wisconsin
