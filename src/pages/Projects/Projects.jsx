@@ -1,5 +1,19 @@
+import Cset from "./Cset";
+import CvCreator from "./CvCreator";
+import Headlog from "./Headlog";
+import MemoryGame from "./MemoryGame";
+import Shop from "./Shop";
+
 function Projects() {
-  return <h1>Projects</h1>;
+  return (
+    <>
+      <Headlog />
+      <Cset />
+      <CvCreator />
+      <Shop />
+      <MemoryGame />
+    </>
+  );
 }
 
 export default Projects;
