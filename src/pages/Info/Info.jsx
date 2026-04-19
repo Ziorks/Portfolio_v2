@@ -11,6 +11,7 @@ import {
   SiUnrealengine,
 } from "react-icons/si";
 
+import picOfMe from "../../assets/images/me.jpg";
 import viteLogo from "../../assets/logos/vite_logo.svg";
 import postgresLogo from "../../assets/logos/postgres_logo.png";
 import pythonLogo from "../../assets/logos/python_logo.svg";
@@ -65,7 +66,11 @@ function Info() {
           building, learning, and putting my work out there for you and the rest
           of the world to see.
         </p>
-        <p>-April 2026</p>
+
+        <p>
+          <img src={picOfMe} />
+          <span>-April 2026</span>
+        </p>
       </div>
 
       <div className={styles.stack}>
