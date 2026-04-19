@@ -5,6 +5,7 @@ import { Sky } from "@react-three/drei";
 import Ocean from "./Ocean";
 import Island from "./Island";
 import Effects from "./Effects";
+
 import styles from "./Background.module.css";
 
 function Background() {

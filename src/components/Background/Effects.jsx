@@ -10,7 +10,7 @@ import { ToneMappingMode } from "postprocessing";
 
 function Effects() {
   return (
-    <EffectComposer>
+    <EffectComposer multisampling={0}>
       <ToneMapping mode={ToneMappingMode.ACES_FILMIC} />
       <HueSaturation saturation={-0.4} hue={-0.5} />
       <BrightnessContrast contrast={0.2} />

@@ -1,7 +1,9 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { Color, DoubleSide, Vector3 } from "three";
+
+import islandUrl from "../../assets/scenes/island.glb";
 
 const vertexShader =
   /* glsl */
@@ -21,7 +23,7 @@ const vertexShader =
     float heightFactor = pos.y;
     
     // WIND WAVES 
-    float wind = sin(uTime * 0.5 + pos.x * 0.1) * 0.05;
+    float wind = sin(uTime * 0.5 + pos.x * 0.1) * 0.04;
     
     // APPLY BEND (sideways movement) 
     pos.z += wind * heightFactor;
@@ -58,15 +60,7 @@ const uniforms = {
 function TreeShaderMaterial() {
   const materialRef = useRef();
 
-  useEffect(() => {
-    if (!materialRef.current) return;
-
-    materialRef.current.needsUpdate = true;
-  }, []);
-
   useFrame(({ clock }) => {
-    if (!materialRef.current) return;
-
     materialRef.current.uniforms.uTime.value = clock.elapsedTime;
   });
 
@@ -84,7 +78,7 @@ function TreeShaderMaterial() {
 }
 
 function Island() {
-  const { nodes } = useGLTF("/src/assets/island.glb");
+  const { nodes } = useGLTF(islandUrl);
 
   return (
     <>

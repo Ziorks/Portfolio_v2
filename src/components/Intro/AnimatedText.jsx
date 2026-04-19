@@ -3,6 +3,8 @@ import { useThree } from "@react-three/fiber";
 import { useEffect, useRef } from "react";
 import { LoopOnce } from "three";
 
+import introUrl from "../../assets/scenes/intro.glb";
+
 function setupCamera(camera, size) {
   camera.aspect = size.width / size.height;
   camera.setFocalLength(30);
@@ -16,7 +18,7 @@ function setupAction(action) {
 }
 
 function AnimatedText({ onStart, onFinish }) {
-  const { scene, animations, cameras } = useGLTF("/src/assets/intro.glb");
+  const { scene, animations, cameras } = useGLTF(introUrl);
   const { actions, mixer } = useAnimations(animations, scene);
   const { set, size } = useThree();
 
