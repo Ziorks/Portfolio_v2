@@ -27,6 +27,7 @@
   letter-spacing: -10px;
   width: 100%;
   height: 0.2rem;
+  text-wrap-mode: nowrap;
   transform-origin: right;
   transform: scaleX(0%);
   transition:
