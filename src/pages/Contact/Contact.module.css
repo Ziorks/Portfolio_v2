@@ -1,0 +1,33 @@
+.contactContainer {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  column-gap: 7rem;
+  row-gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.contactContainer > a {
+  color: #fff;
+  font-size: 7rem;
+  align-self: flex-end;
+  display: block;
+}
+
+.contactContainer > a:last-child {
+  flex-basis: 100%;
+  align-self: flex-start;
+  font-size: 1.7rem;
+  text-align: center;
+}
+
+.contactContainer > a:hover,
+.contactContainer > a:focus {
+  color: rgb(63, 125, 129);
+}
+
+@media (min-width: 800px) {
+  .contactContainer > a:last-child {
+    font-size: 2.5rem;
+  }
+}
