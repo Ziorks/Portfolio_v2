@@ -1,7 +1,9 @@
+import { useEffect, useRef } from "react";
+
 import Nav from "../Nav";
 import Background from "../Background";
+
 import styles from "./Content.module.css";
-import { useEffect, useRef } from "react";
 
 function Content({ children }) {
   const mainRef = useRef();
@@ -32,11 +34,15 @@ function Content({ children }) {
     };
   }, []);
 
+  const scrollToTop = () => {
+    mainRef.current.scrollTop = 0;
+  };
+
   return (
     <div className={styles.contentContainer}>
       <Background />
       <main ref={mainRef}>{children}</main>
-      <Nav />
+      <Nav onLinkClick={scrollToTop} />
     </div>
   );
 }

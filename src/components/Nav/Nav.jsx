@@ -1,15 +1,17 @@
 import { NavLink } from "react-router-dom";
+
 import styles from "./Nav.module.css";
 
 function getClassname({ isActive }) {
   return `${styles.link} ${isActive ? styles.active : ""}`;
 }
 
-function handleClick(e) {
-  e.currentTarget.blur();
-}
+function Nav({ onLinkClick }) {
+  const handleClick = (e) => {
+    e.currentTarget.blur();
+    onLinkClick?.();
+  };
 
-function Nav() {
   return (
     <nav className={styles.navContainer}>
       <NavLink to="/" className={getClassname} onClick={handleClick}>
