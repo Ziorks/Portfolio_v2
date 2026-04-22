@@ -5,11 +5,12 @@
 
 .title {
   font-size: 2rem;
-  margin-bottom: 8rem;
+  margin-bottom: 2rem;
 }
 
 .heading,
-.title {
+.title,
+.resume {
   font-family: "Lexend", sans-serif;
 }
 
@@ -20,8 +21,13 @@
 
 .heading,
 .title,
+.resume,
 .location {
   text-align: center;
+}
+
+.resume {
+  margin-bottom: 8rem;
 }
 
 .wisconsin {
@@ -33,4 +39,18 @@
   right: -2rem;
   bottom: -1rem;
   width: 75px;
+}
+
+.resumeLink {
+  padding: 8px 12px;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
+  font-weight: 200;
+  transition: border-color 200ms ease-out;
+}
+
+.resumeLink:hover {
+  border-color: rgba(255, 255, 255, 1);
 }
